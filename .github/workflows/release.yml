@@ -8,9 +8,7 @@ on:
     workflows:
       - Build
     branches:
-#      - master
-      # TODO: remove after testing
-      - "**"
+      - master
 
 permissions:
   contents: write

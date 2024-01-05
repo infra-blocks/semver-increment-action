@@ -1,0 +1,35 @@
+name: Docker Tag
+
+on:
+  pull_request:
+    tags:
+      - "v**"
+
+# TODO: workflow.
+jobs:
+  docker-tag:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE }}
+          aws-region: ${{ vars.AWS_REGION }}
+      - name: Login to Amazon ECR Public
+        id: login-ecr-public
+        uses: aws-actions/amazon-ecr-login@v2
+        with:
+          registry-type: public
+      # TODO: docker-compose file as input. Action to parse yml from path?
+      # TODO: this could be an action.
+      - name: Parse metadata from docker/docker-compose.yml
+        id: metadata
+        run: |
+          image="$(yq -e '.services["action"].image' docker/docker-compose.yml)"
+          repo=$(echo "${image}" | cut -d ':' -f 1)
+          default_tag=$(echo "${image}" | cut -d ':' -s -f 2)
+          test -n "${default_tag}" || default_tag="latest"
+          echo "repo=${repo}" >> "${GITHUB_OUTPUT}"
+          echo "default-tag=${default_tag}" >> "${GITHUB_OUTPUT}"
+      - run: |
+          git_sha_tag="git-sha-${{ github.sha }}"
+          docker "${{ steps.metadata.outputs.repo }}:${git_sha_tag}" "${{ steps.metadata.outputs.repo }}:${{ github.ref_name }}" 
