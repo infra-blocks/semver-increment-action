@@ -12,6 +12,7 @@ jobs:
     permissions:
       id-token: write
     steps:
+      - uses: actions/checkout@v4
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ vars.AWS_ROLE }}
@@ -32,4 +33,5 @@ jobs:
           echo "default-tag=${default_tag}" >> "${GITHUB_OUTPUT}"
       - run: |
           git_sha_tag="git-sha-${{ github.sha }}"
-          docker "${{ steps.metadata.outputs.repo }}:${git_sha_tag}" "${{ steps.metadata.outputs.repo }}:${{ github.ref_name }}" 
+          docker tag "${{ steps.metadata.outputs.repo }}:${git_sha_tag}" "${{ steps.metadata.outputs.repo }}:${{ github.ref_name }}"
+          docker push "${{ steps.metadata.outputs.repo }}:${{ github.ref_name }}"
