@@ -6,12 +6,10 @@ on:
       - "v**"
 
 jobs:
-  docker-compose-service-metadata:
+  docker-compose-metadata:
     permissions:
       contents: read
-    uses: infrastructure-blocks/docker-compose-service-metadata-workflow/.github/workflows/docker-compose-service-metadata.yml@v1
-    with:
-      service: action
+    uses: infrastructure-blocks/docker-compose-metadata-workflow/.github/workflows/docker-compose-metadata.yml@v1
   docker-tag:
     permissions:
       id-token: write
