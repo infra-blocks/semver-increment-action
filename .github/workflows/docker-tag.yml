@@ -26,14 +26,10 @@ jobs:
         id: metadata
         run: |
           image="$(yq -e '.services["action"].image' docker/docker-compose.yml)"
-          repo=$(echo "${image}" | cut -d ':' -f 1)
-          default_tag=$(echo "${image}" | cut -d ':' -s -f 2)
-          test -n "${default_tag}" || default_tag="latest"
-          echo "repo=${repo}" >> "${GITHUB_OUTPUT}"
-          echo "default-tag=${default_tag}" >> "${GITHUB_OUTPUT}"
-      # TODO: use the registry API instead.
-      - run: |
-          git_sha_tag="git-sha-${{ github.sha }}"
-          docker pull "${{ steps.metadata.outputs.repo }}:${git_sha_tag}" 
-          docker tag "${{ steps.metadata.outputs.repo }}:${git_sha_tag}" "${{ steps.metadata.outputs.repo }}:${{ github.ref_name }}"
-          docker push "${{ steps.metadata.outputs.repo }}:${{ github.ref_name }}"
+          repository=$(echo "${image}" | cut -d ':' -f 1)
+          echo "repository=${repository}" >> "${GITHUB_OUTPUT}"
+          echo "tag=git-sha-${{ github.sha }}" >> "${GITHUB_OUTPUT}"
+      - uses: infrastructure-blocks/docker-tag-action@v1
+        with:
+          image: ${{ steps.metadata.outputs.repository }}:${{ steps.metadata.outputs.tags }}
+          tags: '["${{ github.ref_name }}"]'
