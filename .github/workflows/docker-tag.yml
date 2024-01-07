@@ -31,5 +31,5 @@ jobs:
           echo "tag=git-sha-${{ github.sha }}" >> "${GITHUB_OUTPUT}"
       - uses: infrastructure-blocks/docker-tag-action@v1
         with:
-          image: ${{ steps.metadata.outputs.repository }}:${{ steps.metadata.outputs.tags }}
+          image: ${{ steps.metadata.outputs.repository }}:${{ steps.metadata.outputs.tag }}
           tags: '["${{ github.ref_name }}"]'
