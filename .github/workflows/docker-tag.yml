@@ -10,14 +10,26 @@ jobs:
     permissions:
       contents: read
     uses: infrastructure-blocks/docker-compose-metadata-workflow/.github/workflows/docker-compose-metadata.yml@v1
+  # TODO: workflow.
+  docker-image-parts:
+    runs-on: ubuntu-22.04
+    needs:
+      - docker-compose-metadata
+    outputs:
+      repository: ${{ steps.docker-image-parts.outputs.repository }}
+    steps:
+      - id: docker-image-parts
+        run: |
+          repository=$(echo "${{ fromJson(needs.docker-compose-metadata.outputs.metadata).services.action.image }}" | cut -d ':' -f 1)
+          echo "repository=${repository}" >> "${GITHUB_OUTPUT}"
   docker-tag:
     permissions:
       id-token: write
     needs:
-      - docker-compose-metadata
+      - docker-image-parts
     uses: infrastructure-blocks/aws-ecr-docker-tag-workflow/.github/workflows/aws-ecr-docker-tag.yml@v1
     with:
       aws-role: ${{ vars.AWS_ROLE }}
       aws-region: ${{ vars.AWS_REGION }}
-      image: ${{ fromJson(needs.docker-compose-metadata.outputs.metadata).services.action.image }}
+      image: ${{ needs.docker-image-parts.outputs.repository }}:git-sha-${{ github-sha }}
       tags: '["${{ github.ref_name }}"]'
