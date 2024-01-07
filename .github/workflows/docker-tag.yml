@@ -6,28 +6,20 @@ on:
       - "v**"
 
 jobs:
-  # TODO: docker-compose-service-metadata-workflow
-  metadata:
-    runs-on: ubuntu-22.04
-    outputs:
-      image: ${{ steps.metadata.outputs.image }}
-    steps:
-      - uses: actions/checkout@v4
-      - name: Parse metadata from docker/docker-compose.yml
-        id: metadata
-        run: |
-          image="$(yq -e '.services["action"].image' docker/docker-compose.yml)"
-          repository=$(echo "${image}" | cut -d ':' -f 1)
-          tag="git-sha-${{ github.sha }}"
-          echo "image=${repository}:${tag}" >> "${GITHUB_OUTPUT}"
+  docker-compose-service-metadata:
+    permissions:
+      contents: read
+    uses: infrastructure-blocks/docker-compose-service-metadata-workflow/.github/workflows/docker-compose-service-metadata.yml@v1
+    with:
+      service: action
   docker-tag:
     permissions:
       id-token: write
     needs:
-      - metadata
+      - docker-compose-service-metadata
     uses: infrastructure-blocks/aws-ecr-docker-tag-workflow/.github/workflows/aws-ecr-docker-tag.yml@v1
     with:
       aws-role: ${{ vars.AWS_ROLE }}
       aws-region: ${{ vars.AWS_REGION }}
-      image: ${{ needs.metadata.outputs.image }}
+      image: ${{ fromJson(needs.docker-compose-service-metadata.outputs.service-metadata).image }}
       tags: '["${{ github.ref_name }}"]'
