@@ -12,6 +12,7 @@ jobs:
     outputs:
       image: ${{ steps.metadata.outputs.image }}
     steps:
+      - uses: actions/checkout@v4
       - name: Parse metadata from docker/docker-compose.yml
         id: metadata
         run: |
