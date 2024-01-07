@@ -14,10 +14,10 @@ jobs:
     permissions:
       id-token: write
     needs:
-      - docker-compose-service-metadata
+      - docker-compose-metadata
     uses: infrastructure-blocks/aws-ecr-docker-tag-workflow/.github/workflows/aws-ecr-docker-tag.yml@v1
     with:
       aws-role: ${{ vars.AWS_ROLE }}
       aws-region: ${{ vars.AWS_REGION }}
-      image: ${{ fromJson(needs.docker-compose-service-metadata.outputs.service-metadata).image }}
+      image: ${{ fromJson(needs.docker-compose-metadata.outputs.metadata).services.action.image }}
       tags: '["${{ github.ref_name }}"]'
