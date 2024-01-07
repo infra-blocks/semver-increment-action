@@ -5,31 +5,28 @@ on:
     tags:
       - "v**"
 
-# TODO: workflow.
 jobs:
-  docker-tag:
+  # TODO: docker-compose-service-metadata-workflow
+  metadata:
     runs-on: ubuntu-22.04
-    permissions:
-      id-token: write
+    outputs:
+      image: ${{ steps.metadata.outputs.image }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: ${{ vars.AWS_ROLE }}
-          aws-region: ${{ vars.AWS_REGION }}
-      - name: Login to Amazon ECR Public
-        id: login-ecr-public
-        uses: aws-actions/amazon-ecr-login@v2
-        with:
-          registry-type: public
       - name: Parse metadata from docker/docker-compose.yml
         id: metadata
         run: |
           image="$(yq -e '.services["action"].image' docker/docker-compose.yml)"
           repository=$(echo "${image}" | cut -d ':' -f 1)
-          echo "repository=${repository}" >> "${GITHUB_OUTPUT}"
-          echo "tag=git-sha-${{ github.sha }}" >> "${GITHUB_OUTPUT}"
-      - uses: infrastructure-blocks/docker-tag-action@v1
-        with:
-          image: ${{ steps.metadata.outputs.repository }}:${{ steps.metadata.outputs.tag }}
-          tags: '["${{ github.ref_name }}"]'
+          tag="git-sha-${{ github.sha }}"
+          echo "image=${repository}:${tag}" >> "${GITHUB_OUTPUT}"
+  docker-tag:
+    permissions:
+      id-token: write
+    needs:
+      - metadata
+    uses: infrastructure-blocks/aws-ecr-docker-tag-workflow/.github/workflows/aws-ecr-docker-tag.yml@v1
+    with:
+      aws-role: ${{ vars.AWS_ROLE }}
+      aws-region: ${{ vars.AWS_REGION }}
+      image: ${{ needs.metadata.outputs.image }}
+      tags: '["${{ github.ref_name }}"]'
