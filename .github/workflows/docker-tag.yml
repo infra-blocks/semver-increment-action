@@ -31,5 +31,5 @@ jobs:
     with:
       aws-role: ${{ vars.AWS_ROLE }}
       aws-region: ${{ vars.AWS_REGION }}
-      image: ${{ needs.docker-image-parts.outputs.repository }}:git-sha-${{ github-sha }}
+      image: ${{ needs.docker-image-parts.outputs.repository }}:git-sha-${{ github.sha }}
       tags: '["${{ github.ref_name }}"]'
