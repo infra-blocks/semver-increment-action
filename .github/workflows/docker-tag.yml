@@ -10,7 +10,6 @@ jobs:
     permissions:
       contents: read
     uses: infrastructure-blocks/docker-compose-metadata-workflow/.github/workflows/docker-compose-metadata.yml@v1
-  # TODO: workflow.
   docker-image-parts:
     runs-on: ubuntu-22.04
     needs:

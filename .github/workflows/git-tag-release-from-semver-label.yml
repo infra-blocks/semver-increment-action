@@ -1,12 +1,11 @@
-# TODO: one workflow for all that.
-name: Release
+name: Git Tag Release From Semver Label
 
 on:
   workflow_run:
     types:
       - completed
     workflows:
-      - Build
+      - Build Image
     branches:
       - master
 
