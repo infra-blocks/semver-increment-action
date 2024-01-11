@@ -1,7 +1,6 @@
 import core from "@actions/core";
-import { Outputs } from "@infra-blocks/github";
 
-export interface HandlerOutputs extends Outputs {
+export interface HandlerOutputs {
   "example-output": string;
 }
 
