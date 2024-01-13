@@ -26,7 +26,7 @@
   "dependencies": {
     "@actions/core": "^1.10.1",
     "@infra-blocks/checks": "^0.1.9",
-    "@infra-blocks/github-actions": "^0.1.0",
+    "@infra-blocks/github-actions": "^0.2.0",
     "@infra-blocks/types": "^0.2.0",
     "semver": "^7.5.4",
     "verror": "^1.10.1",

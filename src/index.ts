@@ -4,6 +4,8 @@ import { parseInputs } from "./inputs.js";
 
 runActionHandler(() => {
   return handler(
-    parseInputs(getInputs("version", "type", "prerelease-prefix")),
+    parseInputs(
+      getInputs("version", "type", "prerelease-prefix", "prerelease-base"),
+    ),
   );
 });
