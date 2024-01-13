@@ -1,5 +1,5 @@
 import { expect } from "@infra-blocks/test";
-import { parseInputs } from "../../src/intputs.js";
+import { parseInputs } from "../../src/inputs.js";
 
 describe("inputs", function () {
   describe(parseInputs.name, function () {
