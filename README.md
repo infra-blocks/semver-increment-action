@@ -5,7 +5,30 @@ A Github Action to increment a semantic version using predefined, well-known ver
 The behaviour is based on the excellent [semver](https://www.npmjs.com/search?q=semver) package. It offers the ability
 to increment release versions as well as prerelease versions.
 
+<<<<<<< HEAD
 ## Inputs
+=======
+- Remove the [trigger update from template workflow](.github/workflows/trigger-update-from-template.yml)
+- Rename the docker image/container in [docker compose file](./docker/docker-compose.yml)
+- Edit the package.json to reflect the action's name and links
+- Run `nvm install`
+- Run `npm install`
+- Replace the self-test section of the [build-image workflow](.github/workflows/build-image.yml).
+- Set up code coverage
+- Replace the summary and the action usage section in this document.
+
+## Inputs
+
+|    Name       | Required | Description      |
+|:-------------:|:--------:|------------------|
+| example-input |  true    | A useless input. |
+
+## Outputs
+
+|     Name       | Description                    |
+|:--------------:|--------------------------------|
+| example-output | An equivalently useless output |
+>>>>>>> template/master
 
 |      Name      | Required | Description                                                                                                                                                                                                                             |
 |:---------------:|:--------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -28,6 +51,7 @@ to increment release versions as well as prerelease versions.
 
 ### Release style
 ```yaml
+<<<<<<< HEAD
 - id: semver-inc
   uses: docker://public.ecr.aws/infrastructure-blocks/semver-increment-action:v1
   with:
@@ -56,6 +80,11 @@ When incrementing an existing prerelease version.
     version: 1.2.4-alpha.8
     type: prerelease
     # No need to provide the other fields. The resulting version is "1.2.4-alpha.9"
+=======
+- uses: docker://public.ecr.aws/infrastructure-blocks/docker-typescript-action-template:v1
+  with:
+    example-input: hello
+>>>>>>> template/master
 ```
 
 ## Releasing
