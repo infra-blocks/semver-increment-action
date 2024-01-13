@@ -1,8 +1,5 @@
 import core from "@actions/core";
-
-export interface HandlerOutputs {
-  "example-output": string;
-}
+import { HandlerOutputs } from "./types.js";
 
 export function handler(params: {
   exampleInput: string;
