@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { checkNotNull } from "@infra-blocks/checks";
 import * as semver from "semver";
 import { z } from "zod";
@@ -8,10 +9,17 @@ const SEMVER_REGEX =
   /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$/;
 const PRERELEASE_PREFIX_REGEX =
   /^((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*)?$/;
+=======
+import { z } from "zod";
+import { DockerTypescriptActionTemplateError } from "./error.js";
+import { HandlerParams, Inputs } from "./types.js";
+
+>>>>>>> template/master
 export function parseInputs(inputs: Inputs): HandlerParams {
   try {
     return z
       .object({
+<<<<<<< HEAD
         version: z
           .string()
           /**
@@ -64,6 +72,16 @@ export function parseInputs(inputs: Inputs): HandlerParams {
       .parse(inputs);
   } catch (err) {
     throw new SemverIncrementActionError(
+=======
+        "example-input": z.string(),
+      })
+      .transform((parsed) => ({
+        exampleInput: parsed["example-input"],
+      }))
+      .parse(inputs);
+  } catch (err) {
+    throw new DockerTypescriptActionTemplateError(
+>>>>>>> template/master
       { cause: err as Error },
       `error parsing inputs ${JSON.stringify(inputs)}`,
     );
