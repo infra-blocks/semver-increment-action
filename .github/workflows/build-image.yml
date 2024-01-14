@@ -52,4 +52,5 @@ jobs:
           with: '{"version": "1.2.3", "type": "patch"}'
       - name: Show outputs
         run: |
-          echo "Example output: ${{ fromJson(steps.self-test.outputs.outputs).example-output }}"
+          # To respect nested stringified objects, we need to properly escape quotes.
+          echo -e ${{ toJson(steps.self-test.outputs.outputs) }}
