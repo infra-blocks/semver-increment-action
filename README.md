@@ -6,8 +6,20 @@ A template repository for GitHub Actions hosted as docker images on registries.
 
 - Remove the [trigger update from template workflow](.github/workflows/trigger-update-from-template.yml)
 - Rename the docker image/container in [docker compose file](./docker/docker-compose.yml)
+- Replace the self-test section of the [build-image workflow](.github/workflows/build-image.yml)
 - Replace the summary and the action usage section in this document.
-- Replace the self-test section of the [build-image workflow](.github/workflows/build-image.yml).
+
+## Inputs
+
+|    Name       | Required | Description      |
+|:-------------:|:--------:|------------------|
+| example-input |  true    | A useless input. |
+
+## Outputs
+
+|     Name       | Description                    |
+|:--------------:|--------------------------------|
+| example-output | An equivalently useless output |
 
 ## Usage
 
