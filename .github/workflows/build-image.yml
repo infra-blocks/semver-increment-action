@@ -48,8 +48,13 @@ jobs:
       - uses: jenseng/dynamic-uses@v1
         id: self-test
         with:
+<<<<<<< HEAD
           uses: docker://public.ecr.aws/infrastructure-blocks/semver-increment-action:git-sha-${{ github.sha }}
           with: '{"version": "1.2.3", "type": "patch"}'
+=======
+          uses: docker://public.ecr.aws/${{ github.repository }}:git-sha-${{ github.sha }}
+          with: '{"example-input": "hello"}'
+>>>>>>> template/master
       - name: Show outputs
         run: |
-          echo "Example output: ${{ fromJson(steps.self-test.outputs.outputs).example-output }}"
+          printf ${{ toJson(steps.self-test.outputs.outputs) }} | jq
