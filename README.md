@@ -1,6 +1,6 @@
 # semver-increment-action
 
-A Github Action to increment a semantic version using predefined, well-known version bump types.
+A GitHub Action to increment a semantic version using predefined, well-known version bump types.
 
 The behaviour is based on the excellent [semver](https://www.npmjs.com/search?q=semver) package. It offers the ability
 to increment release versions as well as prerelease versions.
@@ -24,6 +24,7 @@ to increment release versions as well as prerelease versions.
 |     patch      | The patch value of the new version. Example: "4"                                         |
 |   prerelease   | The full prerelease string. Example: "alpha.8"                                           |
 | prerelease-ids | A JSON stringified array of all the prerelease identifiers. Example: '["alpha", 8]'      |
+
 ## Usage
 
 ### Release style
