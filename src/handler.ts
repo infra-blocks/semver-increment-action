@@ -1,9 +1,7 @@
 import core from "@actions/core";
-import { HandlerOutputs } from "./types.js";
+import { HandlerOutputs, HandlerParams } from "./types.js";
 
-export function handler(params: {
-  exampleInput: string;
-}): Promise<HandlerOutputs> {
+export function handler(params: HandlerParams): Promise<HandlerOutputs> {
   const { exampleInput } = params;
   core.info("Running handler!");
   core.info(`received your input: ${exampleInput}`);
