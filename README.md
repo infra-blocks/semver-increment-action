@@ -25,6 +25,12 @@ to increment release versions as well as prerelease versions.
 |   prerelease   | The full prerelease string. Example: "alpha.8"                                           |
 | prerelease-ids | A JSON stringified array of all the prerelease identifiers. Example: '["alpha", 8]'      |
 
+## Permissions
+
+|     Scope     | Level | Reason   |
+|:-------------:|:-----:|----------|
+| pull-requests | read  | Because. |
+
 ## Usage
 
 ### Release style
