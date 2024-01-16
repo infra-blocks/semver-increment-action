@@ -27,9 +27,7 @@ to increment release versions as well as prerelease versions.
 
 ## Permissions
 
-|     Scope     | Level | Reason   |
-|:-------------:|:-----:|----------|
-| pull-requests | read  | Because. |
+N/A
 
 ## Usage
 
