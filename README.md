@@ -7,16 +7,16 @@ to increment release versions as well as prerelease versions.
 
 ## Inputs
 
-|      Name      | Required | Description                                                                                                                                                                                                                             |
-|:---------------:|:--------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     version     |   true   | The semantic version to increment. It must be a valid semantic version. See [here](https://semver.org/) for the definition.                                                                                                             | 
-|      type       |   true   | The increment type. Valid values are: "major", "minor", "patch", "premajor" "preminorg", "prepatch", "prerelease".                                                                                                                      |
-| prerelease-id   |  false   | The prerelease identifier, such as "alpha", "beta", "crappa". This input only makes sense when using a prerelease "pre" type. It defaults to an empty string.                                                                           |
-| prerelease-base |  false   | The reprelease base number. This is either "0", "1" or "false". False means no prerelease number is generated. When false, prerelease id must be set. This input only makes sense when using a prerelease "pre" type. It defaults to "0" |
+|       Name        | Required | Description                                                                                                                                                                                                                              |
+|:-----------------:|:--------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|      version      |   true   | The semantic version to increment. It must be a valid semantic version. See [here](https://semver.org/) for the definition.                                                                                                              | 
+|       type        |   true   | The increment type. Valid values are: "major", "minor", "patch", "premajor" "preminorg", "prepatch", "prerelease".                                                                                                                       |
+| prerelease-prefix |  false   | The prerelease prefix, such as "alpha", "beta", "crappa". This input only makes sense when using a prerelease "pre" type. It defaults to an empty string.                                                                                |
+|  prerelease-base  |  false   | The reprelease base number. This is either "0", "1" or "false". False means no prerelease number is generated. When false, prerelease id must be set. This input only makes sense when using a prerelease "pre" type. It defaults to "0" |
 
 ## Outputs
 
-|    Name        | Description                                                                              |
+|      Name      | Description                                                                              |
 |:--------------:|------------------------------------------------------------------------------------------|
 |    version     | The newly incremented version, as a string. Example: "1.2.4-alpha.8"                     |
 |     major      | The major value of the new version. Example: "1"                                         |
