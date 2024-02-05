@@ -1,4 +1,8 @@
 # semver-increment-action
+[![Build Image](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/build-image.yml/badge.svg)](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/build-image.yml)
+[![Docker Tag](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/docker-tag.yml/badge.svg)](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/docker-tag.yml)
+[![Git Tag Semver From Label](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/git-tag-semver-from-label.yml/badge.svg)](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/git-tag-semver-from-label.yml)
+[![Update From Template](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/update-from-template.yml/badge.svg)](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/update-from-template.yml)
 
 A GitHub Action to increment a semantic version using predefined, well-known version bump types.
 
