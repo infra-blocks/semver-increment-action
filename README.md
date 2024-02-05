@@ -3,6 +3,7 @@
 [![Docker Tag](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/docker-tag.yml/badge.svg)](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/docker-tag.yml)
 [![Git Tag Semver From Label](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/git-tag-semver-from-label.yml/badge.svg)](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/git-tag-semver-from-label.yml)
 [![Trigger Update From Template](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/trigger-update-from-template.yml/badge.svg)](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/trigger-update-from-template.yml)
+[![codecov](https://codecov.io/gh/infrastructure-blocks/docker-typescript-action-template/graph/badge.svg?token=S1OANU9UMZ)](https://codecov.io/gh/infrastructure-blocks/docker-typescript-action-template)
 
 A template repository for GitHub Actions hosted as docker images on registries.
 
