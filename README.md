@@ -19,13 +19,13 @@ A template repository for GitHub Actions hosted as docker images on registries.
 
 ## Inputs
 
-|    Name       | Required | Description      |
+|     Name      | Required | Description      |
 |:-------------:|:--------:|------------------|
-| example-input |  true    | A useless input. |
+| example-input |   true   | A useless input. |
 
 ## Outputs
 
-|     Name       | Description                    |
+|      Name      | Description                    |
 |:--------------:|--------------------------------|
 | example-output | An equivalently useless output |
 
