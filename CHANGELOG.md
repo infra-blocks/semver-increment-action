@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- The action image is now built using the `public.ecr.aws/infrastructure-blocks/docker-typescript-action-base`
+- The action image is now built using the `public.ecr.aws/infra-blocks/docker-typescript-action-base`
   base image.
 
 ## [1.0.4] - 2024-01-21
@@ -43,9 +43,9 @@ but it was truly a leftover hanging thread from previous changes.
 
 - First release!
 
-[1.0.5]: https://github.com/infrastructure-blocks/semver-increment-action/compare/v1.0.4...v1.0.5
-[1.0.4]: https://github.com/infrastructure-blocks/semver-increment-action/compare/v1.0.3...v1.0.4
-[1.0.3]: https://github.com/infrastructure-blocks/semver-increment-action/compare/v1.0.2...v1.0.3
-[1.0.2]: https://github.com/infrastructure-blocks/semver-increment-action/compare/v1.0.1...v1.0.2
-[1.0.1]: https://github.com/infrastructure-blocks/semver-increment-action/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/infrastructure-blocks/semver-increment-action/releases/tag/v1.0.0
+[1.0.5]: https://github.com/infra-blocks/semver-increment-action/compare/v1.0.4...v1.0.5
+[1.0.4]: https://github.com/infra-blocks/semver-increment-action/compare/v1.0.3...v1.0.4
+[1.0.3]: https://github.com/infra-blocks/semver-increment-action/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/infra-blocks/semver-increment-action/compare/v1.0.1...v1.0.2
+[1.0.1]: https://github.com/infra-blocks/semver-increment-action/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/infra-blocks/semver-increment-action/releases/tag/v1.0.0

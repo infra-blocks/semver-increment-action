@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   build:
-    uses: infrastructure-blocks/typescript-build-workflow/.github/workflows/workflow.yml@v1
+    uses: infra-blocks/typescript-build-workflow/.github/workflows/workflow.yml@v1
     with:
       node-version-file: .nvmrc
     secrets:
@@ -37,7 +37,7 @@ jobs:
           registry-type: public
       - name: Build, tag and publish docker image
         id: docker-publish
-        uses: infrastructure-blocks/docker-publish-action@v1
+        uses: infra-blocks/docker-publish-action@v1
         with:
           service: action
           build-arguments:
@@ -54,7 +54,7 @@ jobs:
       - uses: jenseng/dynamic-uses@v1
         id: self-test
         with:
-          uses: docker://public.ecr.aws/infrastructure-blocks/semver-increment-action:git-sha-${{ github.sha }}
+          uses: docker://public.ecr.aws/infra-blocks/semver-increment-action:git-sha-${{ github.sha }}
           with: '{"version": "1.2.3", "type": "patch"}'
       - name: Show outputs
         run: |
