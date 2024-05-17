@@ -1,9 +1,9 @@
 # semver-increment-action
-[![Build](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/build.yml/badge.svg)](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/build.yml)
-[![Release](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/release.yml/badge.svg)](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/release.yml)
-[![Git Tag](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/git-tag.yml/badge.svg)](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/git-tag.yml)
-[![Update From Template](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/update-from-template.yml/badge.svg)](https://github.com/infrastructure-blocks/semver-increment-action/actions/workflows/update-from-template.yml)
-[![codecov](https://codecov.io/gh/infrastructure-blocks/semver-increment-action/graph/badge.svg?token=SIWNNFJ3WQ)](https://codecov.io/gh/infrastructure-blocks/semver-increment-action)
+[![Build](https://github.com/infra-blocks/semver-increment-action/actions/workflows/build.yml/badge.svg)](https://github.com/infra-blocks/semver-increment-action/actions/workflows/build.yml)
+[![Release](https://github.com/infra-blocks/semver-increment-action/actions/workflows/release.yml/badge.svg)](https://github.com/infra-blocks/semver-increment-action/actions/workflows/release.yml)
+[![Git Tag](https://github.com/infra-blocks/semver-increment-action/actions/workflows/git-tag.yml/badge.svg)](https://github.com/infra-blocks/semver-increment-action/actions/workflows/git-tag.yml)
+[![Update From Template](https://github.com/infra-blocks/semver-increment-action/actions/workflows/update-from-template.yml/badge.svg)](https://github.com/infra-blocks/semver-increment-action/actions/workflows/update-from-template.yml)
+[![codecov](https://codecov.io/gh/infra-blocks/semver-increment-action/graph/badge.svg?token=SIWNNFJ3WQ)](https://codecov.io/gh/infra-blocks/semver-increment-action)
 
 A GitHub Action to increment a semantic version using predefined, well-known version bump types.
 
@@ -39,7 +39,7 @@ N/A
 ### Release style
 ```yaml
 - id: semver-inc
-  uses: docker://public.ecr.aws/infrastructure-blocks/semver-increment-action:v1
+  uses: docker://public.ecr.aws/infra-blocks/semver-increment-action:v1
   with:
     version: 1.2.3
     type: major
@@ -50,7 +50,7 @@ N/A
 When creating a prerelease for the first time.
 ```yaml
 - id: semver-inc
-  uses: docker://public.ecr.aws/infrastructure-blocks/semver-increment-action:v1
+  uses: docker://public.ecr.aws/infra-blocks/semver-increment-action:v1
   with:
     version: 1.2.3
     type: prepatch
@@ -61,7 +61,7 @@ When creating a prerelease for the first time.
 When incrementing an existing prerelease version.
 ```yaml
 - id: semver-inc
-  uses: docker://public.ecr.aws/infrastructure-blocks/semver-increment-action:v1
+  uses: docker://public.ecr.aws/infra-blocks/semver-increment-action:v1
   with:    
     version: 1.2.4-alpha.8
     type: prerelease
