@@ -1,11 +1,11 @@
 # docker-typescript-action-template
-[![Build](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/build.yml/badge.svg)](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/build.yml)
-[![Release](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/release.yml/badge.svg)](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/release.yml)
-[![Git Tag](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/git-tag.yml/badge.svg)](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/git-tag.yml)
-[![Trigger Update From Template](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/trigger-update-from-template.yml/badge.svg)](https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/trigger-update-from-template.yml)
-[![codecov](https://codecov.io/gh/infrastructure-blocks/docker-typescript-action-template/graph/badge.svg?token=S1OANU9UMZ)](https://codecov.io/gh/infrastructure-blocks/docker-typescript-action-template)
+[![Build](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/build.yml/badge.svg)](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/build.yml)
+[![Release](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/release.yml/badge.svg)](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/release.yml)
+[![Git Tag](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/git-tag.yml/badge.svg)](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/git-tag.yml)
+[![Trigger Update From Template](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/trigger-update-from-template.yml/badge.svg)](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/trigger-update-from-template.yml)
+[![codecov](https://codecov.io/gh/infra-blocks/docker-typescript-action-template/graph/badge.svg?token=S1OANU9UMZ)](https://codecov.io/gh/infra-blocks/docker-typescript-action-template)
 
-[//]: # ([![Update From Template]&#40;https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/update-from-template.yml/badge.svg&#41;]&#40;https://github.com/infrastructure-blocks/docker-typescript-action-template/actions/workflows/update-from-template.yml&#41;)
+[//]: # ([![Update From Template]&#40;https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/update-from-template.yml/badge.svg&#41;]&#40;https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/update-from-template.yml&#41;)
 
 A template repository for GitHub Actions hosted as docker images and written in Typescript.
 
@@ -41,7 +41,7 @@ A template repository for GitHub Actions hosted as docker images and written in 
 ## Usage
 
 ```yaml
-- uses: docker://public.ecr.aws/infrastructure-blocks/docker-typescript-action-template:v1
+- uses: docker://public.ecr.aws/infra-blocks/docker-typescript-action-template:v1
   with:
     example-input: hello
 ```
