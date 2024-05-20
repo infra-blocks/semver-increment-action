@@ -3,7 +3,7 @@
 [![Release](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/release.yml/badge.svg)](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/release.yml)
 [![Git Tag](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/git-tag.yml/badge.svg)](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/git-tag.yml)
 [![Trigger Update From Template](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/trigger-update-from-template.yml/badge.svg)](https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/trigger-update-from-template.yml)
-[![codecov](https://codecov.io/gh/infra-blocks/docker-typescript-action-template/graph/badge.svg?token=S1OANU9UMZ)](https://codecov.io/gh/infra-blocks/docker-typescript-action-template)
+[![codecov](https://codecov.io/gh/infra-blocks/docker-typescript-action-template/graph/badge.svg?token=3Y409C45IU)](https://codecov.io/gh/infra-blocks/docker-typescript-action-template)
 
 [//]: # ([![Update From Template]&#40;https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/update-from-template.yml/badge.svg&#41;]&#40;https://github.com/infra-blocks/docker-typescript-action-template/actions/workflows/update-from-template.yml&#41;)
 
