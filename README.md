@@ -1,7 +1,6 @@
 # docker-action-template
 [![Build](https://github.com/infra-blocks/docker-action-template/actions/workflows/build.yml/badge.svg)](https://github.com/infra-blocks/docker-action-template/actions/workflows/build.yml)
 [![Release](https://github.com/infra-blocks/docker-action-template/actions/workflows/release.yml/badge.svg)](https://github.com/infra-blocks/docker-action-template/actions/workflows/release.yml)
-[![Git Tag](https://github.com/infra-blocks/docker-action-template/actions/workflows/git-tag.yml/badge.svg)](https://github.com/infra-blocks/docker-action-template/actions/workflows/git-tag.yml)
 [![Trigger Update From Template](https://github.com/infra-blocks/docker-action-template/actions/workflows/trigger-update-from-template.yml/badge.svg)](https://github.com/infra-blocks/docker-action-template/actions/workflows/trigger-update-from-template.yml)
 
 [//]: # ([![Update From Template]&#40;https://github.com/infra-blocks/docker-action-template/actions/workflows/update-from-template.yml/badge.svg&#41;]&#40;https://github.com/infra-blocks/docker-action-template/actions/workflows/update-from-template.yml&#41;)
